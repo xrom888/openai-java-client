@@ -1,4 +1,5 @@
 # OpenAI API Java Client
+[Official API Reference](https://platform.openai.com/docs/api-reference/introduction)
 
 ### Client Initialization
 ```
