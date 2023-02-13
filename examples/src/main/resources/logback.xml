@@ -1,0 +1,17 @@
+<configuration scan="true">
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd} | %d{HH:mm:ss.SSS} | %p | [%thread] | %c{0} | %m%n%ex</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+    <!-- OpenAIClient -->
+    <logger name="com.lipcha" level="DEBUG" />
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>

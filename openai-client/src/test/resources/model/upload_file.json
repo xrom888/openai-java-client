@@ -1,0 +1,8 @@
+{
+  "id" : "file-8QDBFO8R53HzPMulj34bUsjo",
+  "object" : "file",
+  "bytes" : 110,
+  "created_at" : 1676028448,
+  "filename" : "json_lines_example.jsonl",
+  "purpose" : "fine-tune"
+}

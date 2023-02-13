@@ -1,0 +1,6 @@
+{
+  "image" : "/projects/openai-client/examples/src/main/resources/image/image_1.png",
+  "n" : 2,
+  "size" : "1024x1024",
+  "response_format" : "url"
+}

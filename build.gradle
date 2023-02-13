@@ -1,0 +1,66 @@
+plugins {
+    id 'io.github.gradle-nexus.publish-plugin' version '1.1.0'
+}
+
+apply plugin: 'io.github.gradle-nexus.publish-plugin'
+
+group = 'com.lipcha'
+version = '1.12.9'
+
+allprojects {
+    apply plugin: 'idea'
+    apply plugin: 'java-library'
+    apply plugin: 'signing'
+}
+
+subprojects {
+
+    sourceCompatibility = 1.8
+
+    java {
+        withJavadocJar()
+        withSourcesJar()
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    test {
+        useJUnitPlatform()
+        testLogging {
+            events "passed", "skipped", "failed", "standardOut", "standardError"
+        }
+    }
+}
+
+idea {
+    module {
+        downloadSources = true
+    }
+}
+
+nexusPublishing {
+    repositories {
+        sonatype {
+            nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
+            snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
+        }
+    }
+}
+
+ext.genOutputDir = file("$buildDir/generated-resources")
+
+task generateVersionTxt()  {
+    ext.outputFile = file("$genOutputDir/version.txt")
+    outputs.file(outputFile)
+    doLast {
+        outputFile.text = """GroupId: ${project.group}
+Name: ${project.name}
+Version: $version
+Build-time: ${java.time.LocalDateTime.now()}
+"""
+    }
+}
+
+sourceSets.main.output.dir genOutputDir, builtBy: generateVersionTxt

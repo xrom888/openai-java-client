@@ -1,0 +1,34 @@
+{
+  "id": "cmpl-6gxZ5URVELol679I1Wgp5gwBfAqOB",
+  "object": "text_completion",
+  "created": 1675696763,
+  "model": "text-davinci-003",
+  "choices": [
+    {
+      "text": "\n\nThe only true - wisdom is",
+      "index": 0,
+      "logprobs": {
+        "text_offset": [
+          5
+        ],
+        "token_logprobs": [
+          -12.657
+        ],
+        "tokens": [
+          "wisdom"
+        ],
+        "top_logprobs": [
+          {
+            "-": -3.123456
+          }
+        ]
+      },
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 3,
+    "completion_tokens": 7,
+    "total_tokens": 10
+  }
+}

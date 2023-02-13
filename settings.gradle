@@ -1,0 +1,4 @@
+rootProject.name = 'openai-client'
+include 'examples'
+include 'openai-client'
+
