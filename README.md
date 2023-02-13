@@ -194,6 +194,7 @@ Moderation moderation = openAIClient.createModeration(
 
 #### Logging
 Switch to debug to see insights (request/response details)
+
 logback.xml
 ```
 <!-- OpenAIClient -->
