@@ -191,3 +191,49 @@ Moderation moderation = openAIClient.createModeration(
 
 #### All examples can be found in examples folder
 [Examples](https://github.com/xrom888/openai-client/tree/main/examples/src/main/java/com/lipcha/example)
+
+#### Logging
+Switch to debug to see insights (request/response details)
+logback.xml
+```
+<!-- OpenAIClient -->
+<logger name="com.lipcha" level="DEBUG" />
+```
+
+log4j.properties
+```
+log4j.logger.com.lipcha=debug
+```
+
+Log example
+```
+2023-02-13 | 12:38:07.585 | DEBUG | [main] | OpenAIClient | 
+---- REQUEST TIMESTAMP ID 697289552211106, GET https://api.openai.com/v1/models/text-embedding-ada-002
+---- REQUEST BODY ----
+<empty>
+2023-02-13 | 12:38:08.415 | DEBUG | [main] | OpenAIClient | 
+---- RESPONSE CODE 200 FOR REQUEST WITH TIMESTAMP ID 697289552211106
+---- RESPONSE BODY ----
+{
+  "id" : "text-embedding-ada-002",
+  "object" : "model",
+  "created" : 1671217299,
+  "owned_by" : "openai-internal",
+  "permission" : [ {
+    "id" : "modelperm-Ad4J5NsqPbNJy0CMGNezXaeo",
+    "object" : "model_permission",
+    "created" : 1672848112,
+    "allow_create_engine" : false,
+    "allow_sampling" : true,
+    "allow_logprobs" : true,
+    "allow_search_indices" : true,
+    "allow_view" : true,
+    "allow_fine_tuning" : false,
+    "organization" : "*",
+    "group" : null,
+    "is_blocking" : false
+  } ],
+  "root" : "text-embedding-ada-002",
+  "parent" : null
+}
+```
